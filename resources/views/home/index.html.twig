@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}News list{% endblock %}
+
+{% block body %}
+    {% for item in news %}
+        <div>
+            <h2>{{ item.title }}</h2>
+            <span>{{ item.published_at }}</span>
+            <p>{{ item.content|raw }}</p>
+            <a href="/news/{{ item.id }}">Подробнее</a>
+            <br>
+            <p>**************************************************</p>
+        </div>
+    {% endfor %}
+{% endblock %}
